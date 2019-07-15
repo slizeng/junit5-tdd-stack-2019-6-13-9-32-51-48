@@ -8,7 +8,15 @@ class FizzBuzzGame {
             return "Fizz";
         }
 
+        if (isDividedByFive(input)) {
+            return "Buzz";
+        }
+
         return valueOf(input);
+    }
+
+    private boolean isDividedByFive(int input) {
+        return input % 5 == 0;
     }
 
     private boolean isDividedByThree(int input) {
