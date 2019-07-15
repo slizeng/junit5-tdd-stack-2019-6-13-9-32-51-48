@@ -12,7 +12,15 @@ class FizzBuzzGame {
             return "Buzz";
         }
 
+        if (isDividedBySeven(input)) {
+            return "Whizz";
+        }
+
         return valueOf(input);
+    }
+
+    private boolean isDividedBySeven(int input) {
+        return input % 7 == 0;
     }
 
     private boolean isDividedByFive(int input) {
