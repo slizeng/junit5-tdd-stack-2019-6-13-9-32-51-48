@@ -6,21 +6,16 @@ class FizzBuzzGame {
     private Rule parseRule;
 
     public FizzBuzzGame() {
-        FizzBuzzRule fizzBuzzRule = new FizzBuzzRule();
-        FizzWhizzRule fizzWhizzRule = new FizzWhizzRule();
-        FizzRule fizzRule = new FizzRule();
-        BuzzRule buzzRule = new BuzzRule();
-        WhizzRule whizzRule = new WhizzRule();
-        NormalRule normalRule = new NormalRule();
+        Rule rule = new FizzBuzzRule();
 
-        fizzBuzzRule
-                .setSuccessor(fizzWhizzRule)
-                .setSuccessor(fizzRule)
-                .setSuccessor(buzzRule)
-                .setSuccessor(whizzRule)
-                .setSuccessor(normalRule);
+        rule.setSuccessor(new FizzWhizzRule())
+                .setSuccessor(new BuzzWhizzRule())
+                .setSuccessor(new FizzRule())
+                .setSuccessor(new BuzzRule())
+                .setSuccessor(new WhizzRule())
+                .setSuccessor(new NormalRule());
 
-        this.parseRule = fizzBuzzRule;
+        this.parseRule = rule;
     }
 
 

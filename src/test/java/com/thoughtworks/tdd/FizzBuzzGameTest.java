@@ -56,4 +56,11 @@ public class FizzBuzzGameTest {
 
         assertEquals(result, "FizzWhizz");
     }
+
+    @Test
+    void should_return_BuzzWhizz_when_fizzBuzz_with_number_thirty_five() {
+        String result = fizzBuzzGame.fizzBuzz(35);
+
+        assertEquals(result, "BuzzWhizz");
+    }
 }
