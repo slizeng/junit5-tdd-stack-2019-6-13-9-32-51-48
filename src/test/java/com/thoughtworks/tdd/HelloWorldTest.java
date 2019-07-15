@@ -1,7 +1,5 @@
 package com.thoughtworks.tdd;
 
-import com.thoughtworks.tdd.Dependency;
-import com.thoughtworks.tdd.HelloWorld;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -11,7 +9,6 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
-
 
 public class HelloWorldTest {
 
