@@ -12,10 +12,11 @@ class FizzBuzzGame {
         WhizzRule whizzRule = new WhizzRule();
         NormalRule normalRule = new NormalRule();
 
-        fizzBuzzRule.setSuccessor(fizzRule);
-        fizzRule.setSuccessor(buzzRule);
-        buzzRule.setSuccessor(whizzRule);
-        whizzRule.setSuccessor(normalRule);
+        fizzBuzzRule
+                .setSuccessor(fizzRule)
+                .setSuccessor(buzzRule)
+                .setSuccessor(whizzRule)
+                .setSuccessor(normalRule);
 
         this.parseRule = fizzBuzzRule;
     }

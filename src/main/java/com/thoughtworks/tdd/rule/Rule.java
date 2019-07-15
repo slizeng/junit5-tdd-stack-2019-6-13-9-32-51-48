@@ -11,11 +11,12 @@ public abstract class Rule {
 
     protected abstract String output(int number);
 
-    Rule getSuccessor() {
+    private Rule getSuccessor() {
         return successor;
     }
 
-    public void setSuccessor(Rule successor) {
+    public Rule setSuccessor(Rule successor) {
         this.successor = successor;
+        return successor;
     }
 }
