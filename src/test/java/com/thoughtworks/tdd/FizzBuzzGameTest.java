@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class FizzBuzzGameTest {
     private FizzBuzzGame fizzBuzzGame;
@@ -19,5 +20,12 @@ public class FizzBuzzGameTest {
         String result = fizzBuzzGame.fizzBuzz(1);
 
         assertThat(result, is("1"));
+    }
+
+    @Test
+    void should_return_fizz_when_call_fizzBuzz_with_number_three() {
+        String result = fizzBuzzGame.fizzBuzz(3);
+
+        assertEquals(result, "Fizz");
     }
 }

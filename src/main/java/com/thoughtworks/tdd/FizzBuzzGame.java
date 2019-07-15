@@ -1,7 +1,17 @@
 package com.thoughtworks.tdd;
 
-public class FizzBuzzGame {
-    public String fizzBuzz(int input) {
-        return String.valueOf(input);
+import static java.lang.String.valueOf;
+
+class FizzBuzzGame {
+    String fizzBuzz(int input) {
+        if (isDividedByThree(input)) {
+            return "Fizz";
+        }
+
+        return valueOf(input);
+    }
+
+    private boolean isDividedByThree(int input) {
+        return input % 3 == 0;
     }
 }
