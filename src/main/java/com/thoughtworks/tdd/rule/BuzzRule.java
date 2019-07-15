@@ -4,7 +4,7 @@ public class BuzzRule extends Rule {
     private static final int NUMBER = 5;
 
     @Override
-    protected boolean shouldTake(int number) {
+    protected boolean matches(int number) {
         return number % NUMBER == 0;
     }
 

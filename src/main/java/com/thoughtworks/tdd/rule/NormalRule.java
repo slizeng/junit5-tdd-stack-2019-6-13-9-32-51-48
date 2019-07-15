@@ -2,7 +2,7 @@ package com.thoughtworks.tdd.rule;
 
 public class NormalRule extends Rule {
     @Override
-    protected boolean shouldTake(int number) {
+    protected boolean matches(int number) {
         return true;
     }
 

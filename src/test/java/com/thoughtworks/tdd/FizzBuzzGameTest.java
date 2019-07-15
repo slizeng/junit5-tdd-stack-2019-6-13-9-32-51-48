@@ -42,4 +42,11 @@ public class FizzBuzzGameTest {
 
         assertEquals(result, "Whizz");
     }
+
+    @Test
+    void should_return_FizzBuzz_when_fizzBuzz_with_number_fifteen() {
+        String result = fizzBuzzGame.fizzBuzz(15);
+
+        assertEquals(result, "FizzBuzz");
+    }
 }

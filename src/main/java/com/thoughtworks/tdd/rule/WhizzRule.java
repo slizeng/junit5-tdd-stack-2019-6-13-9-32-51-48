@@ -4,7 +4,7 @@ public class WhizzRule extends Rule {
     private static final int NUMBER = 7;
 
     @Override
-    protected boolean shouldTake(int number) {
+    protected boolean matches(int number) {
         return number % NUMBER == 0;
     }
 

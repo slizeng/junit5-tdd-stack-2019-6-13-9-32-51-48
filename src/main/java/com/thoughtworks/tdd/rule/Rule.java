@@ -4,10 +4,10 @@ public abstract class Rule {
     private Rule successor;
 
     public String parse(int number) {
-        return shouldTake(number) ? output(number) : getSuccessor().parse(number);
+        return matches(number) ? output(number) : getSuccessor().parse(number);
     }
 
-    protected abstract boolean shouldTake(int number);
+    protected abstract boolean matches(int number);
 
     protected abstract String output(int number);
 
