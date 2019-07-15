@@ -5,11 +5,12 @@ public class FizzRule extends Rule {
     private static final int NUMBER = 3;
 
     @Override
-    public String parse(int number) {
-        if (number % NUMBER == 0) {
-            return "Fizz";
-        }
+    protected boolean shouldTake(int number) {
+        return number % NUMBER == 0;
+    }
 
-        return getSuccessor().parse(number);
+    @Override
+    protected String output(int number) {
+        return "Fizz";
     }
 }

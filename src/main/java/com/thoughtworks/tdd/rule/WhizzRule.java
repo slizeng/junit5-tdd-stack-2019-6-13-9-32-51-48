@@ -4,11 +4,12 @@ public class WhizzRule extends Rule {
     private static final int NUMBER = 7;
 
     @Override
-    public String parse(int number) {
-        if (number % NUMBER == 0) {
-            return "Whizz";
-        }
+    protected boolean shouldTake(int number) {
+        return number % NUMBER == 0;
+    }
 
-        return getSuccessor().parse(number);
+    @Override
+    protected String output(int number) {
+        return "Whizz";
     }
 }

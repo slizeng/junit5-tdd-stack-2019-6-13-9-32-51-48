@@ -4,11 +4,12 @@ public class BuzzRule extends Rule {
     private static final int NUMBER = 5;
 
     @Override
-    public String parse(int number) {
-        if (number % NUMBER == 0) {
-            return "Buzz";
-        }
+    protected boolean shouldTake(int number) {
+        return number % NUMBER == 0;
+    }
 
-        return getSuccessor().parse(number);
+    @Override
+    protected String output(int number) {
+        return "Buzz";
     }
 }
