@@ -6,9 +6,11 @@ class FizzBuzzGame {
     private Rule parseRule;
 
     public FizzBuzzGame() {
-        Rule rule = new FizzBuzzRule();
+        Rule rule = new FizzBuzzWhizzRule();
 
-        rule.setSuccessor(new FizzWhizzRule())
+        rule
+                .setSuccessor(new FizzBuzzRule())
+                .setSuccessor(new FizzWhizzRule())
                 .setSuccessor(new BuzzWhizzRule())
                 .setSuccessor(new FizzRule())
                 .setSuccessor(new BuzzRule())
