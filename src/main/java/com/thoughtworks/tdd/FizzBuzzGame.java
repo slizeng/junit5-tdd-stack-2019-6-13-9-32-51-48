@@ -1,33 +1,25 @@
 package com.thoughtworks.tdd;
 
-import static java.lang.String.valueOf;
+import com.thoughtworks.tdd.rule.*;
 
 class FizzBuzzGame {
-    String fizzBuzz(int input) {
-        if (isDividedByThree(input)) {
-            return "Fizz";
-        }
+    private Rule parseRule;
 
-        if (isDividedByFive(input)) {
-            return "Buzz";
-        }
+    public FizzBuzzGame() {
+        FizzRule fizzRule = new FizzRule();
+        BuzzRule buzzRule = new BuzzRule();
+        WhizzRule whizzRule = new WhizzRule();
+        NormalRule normalRule = new NormalRule();
 
-        if (isDividedBySeven(input)) {
-            return "Whizz";
-        }
+        fizzRule.setSuccessor(buzzRule);
+        buzzRule.setSuccessor(whizzRule);
+        whizzRule.setSuccessor(normalRule);
 
-        return valueOf(input);
+        this.parseRule = fizzRule;
     }
 
-    private boolean isDividedBySeven(int input) {
-        return input % 7 == 0;
-    }
 
-    private boolean isDividedByFive(int input) {
-        return input % 5 == 0;
-    }
-
-    private boolean isDividedByThree(int input) {
-        return input % 3 == 0;
+    public String fizzBuzz(int input) {
+        return parseRule.parse(input);
     }
 }
